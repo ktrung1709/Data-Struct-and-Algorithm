@@ -141,45 +141,46 @@ int main(){
     int n;
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
-    int arr[n], insert[n], select[n], heap[n], quick[n], merge[n];
+    int arr[n], sort[n];
     printf("\n");
     random(arr, n);
     clock_t start, end;
     double cpu_time_used;
 
-    copy_arr(insert, arr, n);
+    copy_arr(sort, arr, n);
     start = clock();
-    insertion_sort(insert, n);
+    insertion_sort(sort, n);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The running time when using insertion sort is %lf s\n", cpu_time_used);
 
-    copy_arr(select, arr, n);
+    copy_arr(sort, arr, n);
     start = clock();
-    selection_sort(select, n);
+    selection_sort(sort, n);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The running time when using selection sort is %lf s\n", cpu_time_used);
 
-    copy_arr(heap, arr, n);
+    copy_arr(sort, arr, n);
     start = clock();
-    heapsort(heap, n);
+    heapsort(sort, n);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The running time when using heap sort is %lf s\n", cpu_time_used);
 
-    copy_arr(quick, arr, n);
+    copy_arr(sort, arr, n);
     start = clock();
-    quicksort(quick, 0, n-1);
+    quicksort(sort, 0, n-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The running time when using quick sort is %lf s\n", cpu_time_used);
-    
-    copy_arr(merge, arr, n);
+
+    copy_arr(sort, arr, n);
     start = clock();
-    mergeSort(merge, 0, n-1);
+    mergeSort(sort, 0, n-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The running time when using merge sort is %lf s\n", cpu_time_used);
+
     return 0;
 }
