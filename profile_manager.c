@@ -61,6 +61,11 @@ void load(){
     
 }
 
+void print(int n){
+    for (int i = 0; i < n; i++)
+        printf("%s %s\n", list[i].name, list[i].email);
+}
+
 int search(char *name, int left, int right){
     if (left > right)
         return -1;
@@ -93,11 +98,12 @@ int main(){
     int n = count();
     while(1){
         printf("1. Load data\n");
-        printf("2. Search a profile\n");
-        printf("3. Create new profile\n");
-        printf("4. Remove a profile\n");
-        printf("5. Save data\n");
-        printf("6. Quit\n");
+        printf("2. Print list\n");
+        printf("3. Search a profile\n");
+        printf("4. Create new profile\n");
+        printf("5. Remove a profile\n");
+        printf("6. Save data\n");
+        printf("7. Quit\n");
         printf("Enter command: ");
         scanf("%d", &choice);
         switch (choice){
@@ -106,6 +112,9 @@ int main(){
                 heapsort(n);
                 break;
             case 2:
+                print(n);
+                break;
+            case 3:
                 printf("Enter the student's name: ");
                 scanf("%s", name);
                 int found = search(name, 0, n - 1);
@@ -114,14 +123,14 @@ int main(){
                 else
                     printf("Found profile: %s %s\n", list[found].name, list[found].email);
                 break;
-            case 3:
+            case 4:
                 printf("Enter name: "); scanf("%s", name);
                 printf("Enter email: "); scanf("%s", email);
                 add(name, email, n);
                 n = n + 1;
                 heapsort(n);
                 break;
-            case 4:
+            case 5:
                 printf("Enter the student's name: ");
                 scanf("%s", name);
                 found = search(name, 0, n - 1);
@@ -133,10 +142,10 @@ int main(){
                     heapsort(n);
                 }
                 break;
-            case 5:
+            case 6:
                 store(n);
                 break;
-            case 6:
+            case 7:
                 return 0;
         }
     }
