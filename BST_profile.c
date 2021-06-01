@@ -163,7 +163,6 @@ int main(){
                 printf("Enter name: "); scanf("%s", name);
                 printf("Enter email: "); scanf("%s", email);
                 root = insert (root, name, email);
-                printf("Profile created\n");
                 break;
             case 5:
                 printf("Enter the student's name: ");
