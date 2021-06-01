@@ -27,7 +27,7 @@ Node *insert(Node *r, char *name, char *email){
         return makeNode(name, email);
     int c = strcmp(r->name, name);
     if (c == 0){
-        printf("Node already exists\n");
+        printf("Profile already exists\n");
         return r;
     }
     else if (c > 0){
